@@ -153,6 +153,7 @@ h5,
 h6 {
 	color: var(--text-color-header);
 	text-wrap: balance;
+	line-height: 1.1;
 }
 
 p,
@@ -174,6 +175,14 @@ ol {
 		hyphens: none;
 		-webkit-hyphens: none;
 		-ms-hyphens: none;
+	}
+}
+
+@media (max-width: 420px) {
+	p,
+	ul,
+	ol {
+		line-height: 1.35;
 	}
 }
 
@@ -397,7 +406,6 @@ hr {
 }
 
 article li {
-	line-height: 1.45;
 	margin-top: 0.5rem;
 }
 
@@ -765,9 +773,34 @@ figcaption {
 .nav-content {
 	line-height: 1.4;
 }
-.nav-content .linklist {
-	width: max-content;
-	font-size: 1rem;
+
+.nav-cards {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+
+.nav-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-card a {
+	text-decoration: none;
+}
+
+.nav-title {
+	font-size: 12.75px;
+	margin-bottom: 0.25rem;
+	color: var(--text-color);
+}
+
+.nav-image {
+	height: 63.75px;
+	background-image: url('/assets/navsprite.webp');
+	background-repeat: no-repeat;
+	background-size: auto 63.75px;
 }
 
 .postslist-header {
@@ -786,7 +819,7 @@ figcaption {
 }
 
 .preview-title {
-	font-size: 1.7rem;
+	font-size: 1.4rem;
 	margin-bottom: 0.4rem;
 	margin-top: 0.5rem;
 }

@@ -66,6 +66,7 @@
 		{% else %}
 			<meta property="og:image" content="/media/{{thumbnail}}">
 			<meta name="twitter:card" content="summary_large_image">
+			<meta property="twitter:image" content="/media/{{thumbnail}}">
 
 		{% endif %}
 
@@ -83,18 +84,27 @@
 							<a href="/" class="site-title{% if page.url == '/' %}current-item{% endif %}">{{ metadata.title }}</a>
 							<span class="site-description">{{ metadata.shortdescription }}</span>
 						</div>
-							<ul class="linklist">
-												{%- for entry in metadata.navigation_pages %}
-													<li class="linklist-item unvisitable {% if entry.url == page.url %}current-item
-														{% else %}underline{% endif %}
-														{% if entry.class %}
-														{{ entry.class }}
-														{% endif %}
-														">{% if entry.url == page.url %}{{entry.title}}{% else %}
-															<a href="{{ entry.url }}">{{entry.title}}</a>{% endif %}</li>
-												{%- endfor %}
-												</ul>
+						<div class="nav-cards">
+							{%- for entry in metadata.navigation_pages %}
+							<div class="nav-card">
+								{% if entry.disabled %}
+									<div class="nav-title">{{ entry.title }}</div>
+									<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 * 2 }}px;"></div>
+								{% else %}
+									{% if entry.url == page.url %}
+										<div class="nav-title bold">{{ entry.title }}</div>
+										<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 * 2 }}px;"></div>
+									{% else %}
+										<a href="{{ entry.url }}">
+											<div class="nav-title">{{ entry.title }}</div>
+											<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 * 2 }}px;"></div>
+										</a>
+									{% endif %}
+								{% endif %}
+							</div>
+							{%- endfor %}
 						</div>
+					</div>
 					</div>
 			</nav>
 </header>

@@ -105,6 +105,10 @@ body {
 	padding-left: 0;
 }
 
+nav {
+	width: 100%;
+}
+
 h1 {
 	font-size: 3rem;
 	margin-top: 0em;
@@ -145,6 +149,7 @@ h6 {
 	margin-top: 0;
 	padding-top: 1.5rem;
 }
+
 h1,
 h2,
 h3,
@@ -156,12 +161,19 @@ h6 {
 	line-height: 1.1;
 }
 
+h3 {
+	font-size: var(--font-size-text);
+	margin-bottom: 0;
+	margin-top: 0 !important;
+	line-height: 1.45;
+}
+
+
 p,
 ul,
 ol {
 	font-size: var(--font-size-text);
 	line-height: 1.45;
-	letter-spacing: -0.01rem;
 	margin: 0;
 	hyphens: manual;
 	-webkit-hyphens: manual;
@@ -181,7 +193,8 @@ ol {
 @media (max-width: 420px) {
 	p,
 	ul,
-	ol {
+	ol,
+	h3 {
 		line-height: 1.35;
 	}
 }
@@ -770,15 +783,11 @@ figcaption {
 	margin-bottom: 5em;
 	max-width: 100% !important;
 }
-.nav-content {
-	line-height: 1.4;
-}
 
 .nav-cards {
 	display: flex;
 	flex-wrap: nowrap;
 	gap: 1rem;
-	margin-top: 0.5rem;
 }
 
 .nav-card {
@@ -786,27 +795,87 @@ figcaption {
 	flex-direction: column;
 }
 
-.nav-card a {
-	text-decoration: none;
+.nav-title {
+	font-size: 12px;
+	margin-bottom: 0.6em;
+	text-wrap: balance;
+	line-height: 1.1;
 }
 
-.nav-title {
-	font-size: 12.75px;
-	margin-bottom: 0.25rem;
-	color: var(--text-color);
+.nav-card .linklist {
+	margin-top: -2px;
+	line-height: 1;
+}
+
+.comma {
+	font-size: 12px;
+	margin-bottom: 0;
+	line-height: 1.2;
+}
+
+.comma:hover {
+	color: var(--text-color-link-active);
+}
+
+.comma::after {
+	content: ", ";
+}
+
+.disabled {
+	color: var(--text-color-disabled);
+}
+
+nav .unvisitable a[href]:visited,
+nav a[href] {
+	text-decoration: none !important;
 }
 
 .nav-image {
-	height: 63.75px;
+	height: 65px;
 	background-image: url('/assets/navsprite.webp');
 	background-repeat: no-repeat;
-	background-size: auto 63.75px;
+	background-size: auto 65px;
+	filter: grayscale(100%);
+	transition: filter 0.35s ease-out;
+	z-index: 1;
+}
+
+a:hover .nav-image {
+	filter: grayscale(0%);
+  transition: filter 0.05s ease-in;
+}
+
+.tint {
+	position: relative;
+  display: inline-block;
+  height: 65px;
+  width: fit-content;
+}
+
+.tint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-color);
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+  transition: opacity 0.35s ease-out;
+}
+
+a:hover .tint::after {
+	opacity: 0;
+	transition: opacity 0.05s ease-in;
 }
 
 .postslist-header {
 	margin-bottom: 0;
-	font-size: 4rem;
 }
+
+.homepage-name {
+	line-height: 0.9;
+}
+
 .postslist-container {
 	display: flex;
 	gap: 0.5rem;
@@ -990,9 +1059,15 @@ footer {
 
 .container {
 	display: flex;
-	gap: 1.2rem;
+	flex-wrap: wrap;
+	gap: 2%;
 	margin-bottom: 1rem;
 }
+
+.container * {
+	min-width: 220px;
+}
+
 .container#markdown-extras p {
 	font-size: var(--font-size-caption);
 	line-height: 1.2;
@@ -1015,7 +1090,10 @@ footer {
 	margin-bottom: -0.5rem;
 }
 
-figure .fullwidth {
+.full-width,
+h1:has(.full-width),
+figure:has(.full-width),
+picture:has(.full-width) {
 	width: 100%;
 }
 

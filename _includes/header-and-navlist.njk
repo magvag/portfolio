@@ -1,0 +1,18 @@
+<h1 class="full-width">{{ header }}</h1>
+
+<div class="scrollable">
+<div class="scrollable__in js-scrollable">
+<ul class="linklist">
+	{%- for item in nav_items %}
+		{%- if item.url == page.url %}
+			<li class="linklist-item unvisitable bold current-item">
+				{{ item.name }}
+			</li>
+		{%- else %}
+			<li class="linklist-item unvisitable underline">
+				<a href="{{ item.url }}">{{ item.name }}</a></li>
+		{%- endif %}
+	{%- endfor %}
+</ul>
+</div>
+</div>

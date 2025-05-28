@@ -1,0 +1,10 @@
+.markdown-source-view.mod-cm6:not(.is-live-preview)  :is(.cm-content, span.cm-inline-code, .cm-hashtag, span.cm-link, .cm-strong, .cm-em, .cm-header, .HyperMD-header, .HyperMD-list-line.cm-line) {
+	font-family: var(--font-monospace);
+	font-size: var(--text-size);
+	font-weight: var(--text-weight);
+	font-style: normal;
+	letter-spacing: 0;
+	padding: 0;
+	background-color: transparent;
+	color: var(--text-color);
+}

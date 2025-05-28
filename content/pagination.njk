@@ -10,7 +10,7 @@ const pagination = {
 const eleventyExcludeFromCollections = true;
 
 const eleventyComputed = {
-		title: "{% if pagination.pageNumber < pagination.pages.length - 1 %}Страница {{ pagination.pageNumber + 1}} · {% endif %}{{ metadata.blog_homepage_name }} · {{metadata.title}}",
+		title: "{% if pagination.pageNumber < pagination.pages.length - 1 %}Страница {{ pagination.pageNumber + 1}} · {% endif %}{{ metadata.blog_homepage_name }}",
 		permalink: "{{ metadata.blog_homepage }}{% if pagination.pageNumber < pagination.pages.length - 1 %}{{ pagination.pageNumber + 1}}/{% endif %}"
 }
 
@@ -21,11 +21,14 @@ const eleventyComputed = {
 {% set postsCount = collections.posts | length %}
 
 <div class="postslist-container unvisitable">
-<h1 class="postslist-header">{{metadata.blog_homepage_name}}</h1>
+<h1 class="postslist-header homepage-name">{{metadata.blog_homepage_name}}</h1>
 <a href="{{metadata.blog_homepage}}all/">Все {% include "_includes/n-zametok.njk" %} списком</aф></div>
 
 {% include "postspreviews.njk" %}
+
+{%- if pagination.page.next or pagination.page.previous %}
 <ul class="links-nextprev unvisitable">
 	<li class="links-nextprev-prev">{%- if pagination.page.next %}Ctrl+←<br> {%- if pagination.pageNumber !== pagination.pages.length - 3%}<a href="{{ pagination.page.next.url}}">{% else %}<a href="{{ pagination.page.last.url}}">{% endif %}Позднее</a>{% else %}<p></p>{% endif %}</li>
 	<li class="links-nextprev-next">{%- if pagination.page.previous %}Ctrl+→<br>{%- if page.url !== pagination.page.last.url %}<a href="{{ pagination.page.previous.url}}">{% else %}<a href="{{ metadata.blog_homepage }}{{ pagination.pageNumber - 1 }}/">{% endif %}Ранее</a>{% else %}<p></p>{% endif %}</li>
 </ul>
+{% endif %}

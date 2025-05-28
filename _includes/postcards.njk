@@ -1,0 +1,29 @@
+
+<div class="post-cards">
+  {%- for post in postslist | reverse %}
+    {% set images = post.data.media | imagesOnly %}
+    <div class="post-card">
+      {% if images.length > 0 %}
+        {% set image = images[0] %}
+        {% set thumbnail = "/blog/media/" + image %}
+        <a href="{{ post.url }}">
+          <img src="{{ thumbnail }}" alt="{{ image | removeExtension }}">
+        </a>
+      {% endif %}
+
+      <h1 class="post-card-title">
+        <a href="{{ post.url }}">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            <code>{{ post.url }}</code>
+          {% endif %}
+        </a>
+      </h1>
+
+      <div class="post-card-description">
+        <p>{{ post.data.description | striptags | safe }}</p>
+      </div>
+    </div>
+  {%- endfor %}
+</div>

@@ -1,5 +1,9 @@
 {
   "baseFontSize": 18,
   "nativeMenus": false,
-  "showRibbon": false
+  "showRibbon": false,
+  "enabledCssSnippets": [
+    "monospace-source-mode"
+  ],
+  "monospaceFontFamily": "Iosevka Fixed SS05"
 }

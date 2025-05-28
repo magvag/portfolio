@@ -1,0 +1,130 @@
+@font-face {
+	font-family: "PT Sans";
+	src: url("/fonts/PTSansRegular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "PT Sans";
+	src: url("/fonts/PTSansExtraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "PT Sans";
+	src: url("/fonts/PTSansBold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "PT Sans";
+	src: url("/fonts/PTSansItalic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "PT Sans Caption";
+	src: url("/fonts/PTSansCaptionRegular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--font-family: "PT Sans", -apple-system, system-ui, sans-serif;
+	--font-family-monospace: "PT Mono", Consolas, Menlo, Monaco, monospace;
+	--font-family-caption: "PT Sans Caption", -apple-system, system-ui, sans-serif;
+}
+
+:root {
+	--background-color: white;
+	--text-color: #000;
+	--text-color-header: #6b4fc2;
+	--text-color-highlight: #000;
+	--text-color-link: #0479bb;
+	--text-color-link-active: #f84890;
+	--text-color-link-visited: #6b4fc2;
+	--text-color-accent: #f84890;
+	--background-color-highlight: color-mix(in srgb, #ffe300, transparent 50%);
+	--spoiler-color: #a6aed7;
+	--code-background: color-mix(in srgb, var(--text-color), transparent 95%);
+
+	--font-size-text: 1.125rem;
+	--font-size-caption: 0.825rem;
+
+	--article-width: 40rem;
+	--star-mark: "★";
+}
+
+.big {
+	max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color: #202020;
+
+		--text-color: #e5e5e5;
+		--text-color-link: #8ea0ff;
+		--text-color-link-active: #f84890;
+		--text-color-link-visited: #e784e0;
+		--text-color-accent: #f84890;
+		--text-color-highlight: #2a0035;
+		--background-color-highlight: #ffea78;
+		--transparency-underline: 40%;
+	}
+}
+
+h1 {
+	font-size: 4rem;
+	line-height: 0.9;
+	letter-spacing: -0.01em;
+	margin-bottom: 0.7rem;
+	font-weight: 800;
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 3rem;
+	}
+}
+
+.scrollable .linklist {
+	width: max-content;
+	margin-bottom: 1rem;
+}
+
+code {
+	font-size: 100%;
+}
+
+@media screen and (min-width: 30rem) {
+	.window {
+		outline: 1.5px solid #fff;
+	}
+}
+
+.post-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1rem;
+}
+
+.post-card {
+	flex: 1 1 300px;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.post-card h1 {
+	font-size: 2rem;
+}

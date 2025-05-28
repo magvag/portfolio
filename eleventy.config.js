@@ -42,6 +42,16 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(hyphenatorPlugin);
 	eleventyConfig.addPlugin(imageFormat);
 
+	eleventyConfig.addCollection("symbolsposts", function (collectionApi) {
+		return collectionApi
+			.getAll()
+			.filter(
+				(item) =>
+					item.data.layout === "layouts/biolayout.njk" && !item.data.notPost,
+			)
+			.sort((a, b) => a.data.date - b.data.date);
+	});
+
 	// HAD TO PUT INTO HYPHENATOR PLUGIN CAUSE 11ty DOES FASTER PREPROCESSORS FIRST
 	//
 	// eleventyConfig.addPreprocessor("nbspEmDash", "md", (data, content) => {

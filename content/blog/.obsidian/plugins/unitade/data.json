@@ -1,0 +1,59 @@
+{
+  "markdown_overcharge": false,
+  "extensions": "txt>dat>conf>js>ts>py>njk>json",
+  "is_case_insensitive": false,
+  "is_onload": false,
+  "is_onload_unsafe": false,
+  "forced_extensions": "txt>dat>conf>js>ts>py>njk>json",
+  "is_ignore": false,
+  "ignore_extensions": "",
+  "ignore_masks": "",
+  "is_grouped": false,
+  "grouped_extensions": "markdown: txt>dat>conf>js>ts>py>njk>json;",
+  "mobile_settings": {
+    "extensions": "txt"
+  },
+  "barefiling": true,
+  "stable": true,
+  "errors": {},
+  "debug_mode": false,
+  "silence_errors": true,
+  "manifest_version": "3.2.4",
+  "compatibility_module": true,
+  "safe_mode": false,
+  "code_editor_settings": {
+    "enabled": false,
+    "use_default_extensions": false,
+    "extensions": "",
+    "folding": true,
+    "line_numbers": true,
+    "word_wrapping": true,
+    "minimapping": false,
+    "validation_semantic": false,
+    "validation_syntax": false,
+    "theme": "auto",
+    "force_vanilla_paste": false,
+    "enable_zoom": true,
+    "font_size": 16,
+    "font_family": "'Fira Code', Consolas, 'Courier New', monospace",
+    "font_ligatures": true
+  },
+  "SYS_FONTSIZE_MAX": 32,
+  "SYS_FONTSIZE_MIN": 5,
+  "status_bar": {
+    "enabled": false,
+    "registered_extensions": {
+      "enabled": false,
+      "include_extensions": false,
+      "include_extensions_grouped": false,
+      "include_code_editor_extensions": false
+    },
+    "registered_views": false,
+    "current_processor": false,
+    "current_display": false,
+    "cursor_position": true
+  },
+  "advanced_silencing_errors": {
+    "signatures": ""
+  }
+}

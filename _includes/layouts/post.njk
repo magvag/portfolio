@@ -13,7 +13,7 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 <article>
-<h1{%- if starred %} class="starred"{%- endif %}>{{ title }}</h1>
+<h1{%- if starred %} class="starred"{%- endif %}>{{ title | textHyphenate }}</h1>
 
 
 

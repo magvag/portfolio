@@ -33,6 +33,7 @@ export default function markdownItConfig(eleventyConfig) {
 			.use(spoiler)
 			.use(mark)
 			.use(container, { name: "container" })
+			.use(container, { name: "dummy" })
 			.use(icon),
 	);
 }

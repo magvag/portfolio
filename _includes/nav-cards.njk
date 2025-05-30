@@ -1,0 +1,85 @@
+<div class="nav-content nav-cards scrollable__in js-scrollable">
+	{%- for entry in metadata.navigation_pages %}
+		<div class="nav-card unvisitable" {% if not entry.type %}style="width: {{ entry.width * 1.25 }}px;"{% else %}style="width: {{'105px' if entry.type == "blogcard"}}"{% endif %}>
+
+			{% if entry.type == "blogcard" %}
+				{# Special layout for blogcard type #}
+				{# title with img #}
+				{% if entry.url == page.url %}
+					<div class="nav-header" style="display: flex; gap: 6px;">
+						<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; height: {{ entry.width * 1.25 }}px; filter: none; margin-top: 2px; {{ entry.style }}"></div>
+						<div class="nav-title bold">{{ entry.title }}</div>
+					</div>
+				{% else %}
+					<a href="{{ entry.url }}" alt="{{ entry.title }}">
+						<div class="nav-header" style="display: flex; gap: 6px;
+							">
+							<div class="tint{% if (tags and entry.tag and entry.tag in tags) or '/tags' in page.url or '/notes' in page.url %} accent{% endif %}" style="height: {{ entry.width * 1.25 }}px; margin-top: 2px;">
+								<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; height: {{ entry.width * 1.25 }}px; {{ entry.style }}"></div>
+							</div>
+							<div class="nav-title{% if (tags and entry.tag and entry.tag in tags) or '/tags' in page.url or '/notes' in page.url %} bold accent{% endif %}">{{ entry.title }}</div>
+						</div>
+					</a>
+				{% endif %}
+				{# the taglist #}
+				{% if entry.nav_items %}
+					<ul class="linklist unvisitable">
+						{%- for item in entry.nav_items %}
+							<li class="linklist-item comma{% if taglist and item.tag and item.tag in taglist %} accent{% endif %}">
+								{% set tagUrl = "" %}
+									{%- for tagLink in metadata.tag_links -%}
+										{%- if tagLink.name == item.tag -%}
+											{% set tagUrl %}/tags/{{ tagLink.url }}/{% endset %}
+										{%- endif -%}
+									{%- endfor -%}
+								{%- if (item.url and item.url == page.url) or tagUrl == page.url %}
+									{{ item.name }}
+								{%- else -%}
+									<a href="{{ item.url or tagUrl }}">{{ item.name }}</a>
+								{%- endif -%}
+							</li>
+						{%- endfor %}
+					</ul>
+				{% endif %}
+			{% else %}
+
+
+				{# Regular navigation card #}
+				{% if entry.disabled %}
+					{# Disabled entry #}
+					<div class="nav-title disabled">{{ entry.title }}</div>
+					<div class="tint">
+						<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; {{ entry.style or "" }}"></div>
+					</div>
+				{% elif entry.url == page.url %}
+					{# Current page #}
+					<div class="nav-title bold">{{ entry.title }}</div>
+				{% else %}
+					{# Regular link #}
+					<a href="{{ entry.url }}" alt="{{ entry.title }}">
+						<div class="nav-title{% if tags and entry.tag and entry.tag in tags %} bold accent{% endif %}">{{ entry.title }}</div>
+						{% if not tags or not entry.tag in tags %}
+							<div class="tint">
+								<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; {{ entry.style or "" }}"></div>
+							</div>
+						{% endif %}
+					</a>
+				{% endif %}
+
+				{% if not entry.disabled and entry.nav_items and (tags and entry.tag and entry.tag in tags) %}
+					<ul class="linklist unvisitable" style="width: auto;">
+						{%- for item in entry.nav_items %}
+							<li class="linklist-item comma">
+								{%- if item.url == page.url -%}
+									{{ item.name }}
+								{%- else -%}
+									<a href="{{ item.url }}">{{ item.name }}</a>
+								{%- endif -%}
+							</li>
+						{%- endfor -%}
+					</ul>
+				{% endif %}
+			{% endif %}
+		</div>
+	{%- endfor %}
+</div>

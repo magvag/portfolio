@@ -77,67 +77,9 @@
 		<a href="#skip" class="visually-hidden">Перейти к содержимому</a>
 			<nav>
 				<h2 class="visually-hidden">Навигация</h2>
-				<div class="nav-container scrollable">
-					<div class="nav-content nav-cards scrollable__in js-scrollable">
-
-						{% set entry = metadata.blogcard %}
-						<div class="nav-card unvisitable" id="vagabov-magazine" style="width: 100px;">
-							<a href="{{ entry.url }}" alt="{{ entry.title }}">
-								<div class="nav-header" style="display: flex; gap: 5px;">
-										<div class="tint" style="height: {{ entry.width * 1.25 }}px; padding-top: 1px; ">
-											<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; height: {{ entry.width * 1.25 }}px"></div>
-										</div>
-									<div class="nav-title">{{ entry.title }}</div>
-								</div>
-							</a>
-								<ul class="linklist unvisitable" style="width: auto;">
-								{%- for item in entry.nav_items %}
-								<li class="linklist-item comma {% if item.url == page.url %}{% endif %}">
-									{%- if item.url == page.url %}
-										{{ item.name }}
-									{%- else %}
-										<a href="{{ item.url }}">{{ item.name }}</a>{%- endif %}</li>
-								{%- endfor %}
-							</ul>
-</div>
-
-
-
-
-
-
-
-
-							{%- for entry in metadata.navigation_pages %}
-							<div class="nav-card unvisitable" style="width: {{ entry.width * 1.25 }}px;">
-								{% if entry.disabled %}
-									<div class="nav-title disabled">{{ entry.title }}</div>
-									<div class="tint">
-										<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; {{ entry.style }};"></div>
-									</div>
-								{% else %}
-									{% if entry.url == page.url %}
-										<div class="nav-title bold ">{{ entry.title }}</div>
-										<div class="tint">
-											<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; {{ entry.style }};"></div>
-										</div>
-									{% else %}
-										<a href="{{ entry.url }}" alt="{{ entry.title }}">
-											{% if tags and entry.tag in tags %}
-												<div class="nav-title bold accent">{{ entry.title }}</div>
-											{% else %}
-												<div class="nav-title">{{ entry.title }}</div>
-											{% endif %}
-											<div class="tint">
-												<div class="nav-image" style="width: {{ entry.width * 1.25 }}px; background-position-x: {{ entry.pos * -1.25 }}px; {{ entry.style }}"></div>
-											</div>
-										</a>
-									{% endif %}
-								{% endif %}
-</div>
-							{%- endfor %}
-						</div>
-					</div>
+				<div class="nav-container scrollable bordered shadow">
+					{% include "nav-cards.njk" %}
+				</div>
 			</nav>
 </header>
 

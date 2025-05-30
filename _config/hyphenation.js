@@ -14,8 +14,22 @@ const smallWordLength = 7;
 
 export function hyphenateText(text) {
 	const lines = text.split("\n");
+	let isInsideCodeBlock = false; // Track code block state
+
 	for (let i = 0, L = lines.length; i < L; i++) {
 		const line = lines[i];
+
+		// Toggle code block state when encountering fenced code blocks
+		if (line.startsWith("```")) {
+			isInsideCodeBlock = !isInsideCodeBlock;
+			continue;
+		}
+
+		// Skip hyphenation inside code blocks
+		if (isInsideCodeBlock) {
+			continue;
+		}
+
 		if (skipLineRx.test(line)) continue;
 
 		const words = line.split(" ");
@@ -70,5 +84,9 @@ export function hyphenateText(text) {
 export default function hyphenatorPlugin(eleventyConfig) {
 	eleventyConfig.addPreprocessor("hyphenate", "md", (data, content) => {
 		return hyphenateText(content, hyphenatorRu, hyphenatorEn);
+	});
+
+	eleventyConfig.addFilter("textHyphenate", (content) => {
+		return hyphenateText(content);
 	});
 }

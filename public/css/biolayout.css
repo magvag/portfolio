@@ -38,6 +38,14 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "PT Sans Caption";
+	src: url("/fonts/PTSansCaptionBold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--font-family: "PT Sans", -apple-system, system-ui, sans-serif;
 	--font-family-monospace: "PT Mono", Consolas, Menlo, Monaco, monospace;
@@ -70,9 +78,10 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color: #202020;
+		--background-color: #19181f;
 
-		--text-color: #e5e5e5;
+		--text-color: #afafaf;
+		--text-color-header: #c7b4ff;
 		--text-color-link: #8ea0ff;
 		--text-color-link-active: #f84890;
 		--text-color-link-visited: #e784e0;
@@ -83,11 +92,22 @@
 	}
 }
 
+.nav-title,
+.comma {
+	font-family: var(--font-family-caption);
+	font-size: 11px;
+}
+
+.nav-title {
+	margin-top: -1px;
+}
+
 h1 {
 	font-size: 4rem;
-	line-height: 0.9;
+	line-height: 0.8;
 	letter-spacing: -0.01em;
 	margin-bottom: 0.7rem;
+	margin-top: 0.2rem;
 	font-weight: 800;
 }
 
@@ -97,9 +117,10 @@ h1 {
 	}
 }
 
-.scrollable .linklist {
+main .scrollable .linklist {
 	width: max-content;
 	margin-bottom: 1rem;
+	margin-top: 0.5rem;
 }
 
 code {
@@ -127,4 +148,9 @@ code {
 
 .post-card h1 {
 	font-size: 2rem;
+}
+
+.scrollable__in > .linklist {
+	font-size: var(--font-size-caption);
+	font-family: var(--font-family-caption);
 }

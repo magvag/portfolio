@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import #path from "node:path";
+import path from "node:path";
 
 const mediaDir = "content/blog/media";
 let mediaFiles = [];
@@ -13,10 +13,14 @@ if (fs.existsSync(mediaDir)) {
 export default {
 	layout: "layouts/post.njk",
 	permalink: "/{{ page.fileSlug }}/",
+	tags: ["posts"],
 	eleventyComputed: {
 		tags: (data) => {
-			if (data.notPost) return data.tags;
-			return [...(data.tags || []), "posts"];
+			if (data.notPost)
+				return data.tags.filter(function (item) {
+					return item !== "posts";
+				});
+			return data.tags;
 		},
 		media: (data) => {
 			if (!data.page || !data.page.rawInput) return [];
@@ -36,7 +40,7 @@ export default {
 					!p.trim().startsWith("![") &&
 					!p.trim().startsWith("|") &&
 					!p.trim().startsWith("#") &&
-					 p.trim().length > 0 &&
+					p.trim().length > 0 &&
 					!p.trim().startsWith(" "),
 			);
 			if (validParagraphs.length === 1) {
@@ -47,4 +51,3 @@ export default {
 		},
 	},
 };
-

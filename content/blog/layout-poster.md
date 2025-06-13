@@ -11,5 +11,12 @@ tags:
 layout: layouts/biolayout.njk
 permalink: /layout/poster/
 ---
-Альтернативная раскладка клавиатуры с полезными для биологов символами: правильные кавычки и тире, греческие буквы, подстрочные и надстрочные цифры,
+Постер Раскладки для биологов имеет пропорции А4 и хорошо выглядит даже в шпаргалочном формате А3. Если ваш принтер настаивает на полях, перед печатью кропните поля необходимого размера у самой картинки. Промоушен в виде названия раскладки отрезается ножницами по линии.
 
+
+Скачать хайрез: [PNG,](biolayout-poster.png) [PDF](biolayout-poster.pdf)
+
+::: scrollable
+:::: dummy {class="scrollable__in js-scrollable"}
+![biolayout-poster-light](biolayout-poster-light.png) {style="border: solid 1px var(--text-color-header); min-width: 800px;"}
+::::

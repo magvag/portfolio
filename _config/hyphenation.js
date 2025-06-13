@@ -30,7 +30,7 @@ export function hyphenateText(text) {
 			continue;
 		}
 
-		if (skipLineRx.test(line)) continue;
+		if (skipLineRx.test(line.trim())) continue;
 
 		const words = line.split(" ");
 		for (let j = 0, W = words.length; j < W; j++) {

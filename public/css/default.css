@@ -50,6 +50,7 @@
 	--background-color-highlight: color-mix(in srgb, #ffe300, transparent 50%);
 	--spoiler-color: #bc90ca;
 	--code-background: color-mix(in srgb, var(--text-color), transparent 95%);
+	--scrollable-shadow-color: var(--text-color-header);
 
 	--font-size-text: 1.125rem;
 	--font-size-caption: 0.825rem;
@@ -470,9 +471,9 @@ blockquote p {
 	line-height: 1.2;
 }
 
-article p code,
-article ul code,
-article ol code {
+p code,
+ul code,
+ol code {
 	background: var(--code-background);
 	padding: 0rem 0.35rem 0.05rem 0.35rem;
 	border-radius: 3px;
@@ -969,11 +970,11 @@ article {
 }
 
 .shadow::before {
-	background: radial-gradient(at 0%, color-mix(in srgb, var(--text-color), transparent 80%),transparent 75%);
+	background: radial-gradient(at 0%, color-mix(in srgb, var(--scrollable-shadow-color), transparent 80%),transparent 75%);
 }
 
 .bordered::before {
-	border-left: 1px solid var(--text-color);
+	border-left: 1px solid var(--scrollable-shadow-color);
 }
 
 .scrollable::after {
@@ -982,11 +983,11 @@ article {
 }
 
 .shadow::after {
-	background: radial-gradient(at 100%, color-mix(in srgb, var(--text-color), transparent 80%),transparent 75%);
+	background: radial-gradient(at 100%, color-mix(in srgb, var(--scrollable-shadow-color), transparent 80%),transparent 75%);
 }
 
 .bordered::after {
-	border-right: 1px solid var(--text-color);
+	border-right: 1px solid var(--scrollable-shadow-color);
 }
 .scrollable.scrollable__verified.is__scrolled::before,
 .scrollable.scrollable__verified:not(.is__end)::after {
@@ -1086,4 +1087,5 @@ h1:has(.full-width),
 figure:has(.full-width),
 picture:has(.full-width) {
 	width: 100%;
+	max-width: 100%;
 }

@@ -27,12 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "font-lines.md",
+                "file": "layout-faq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "font-lines"
+              "title": "layout-faq"
+            }
+          },
+          {
+            "id": "5401b35b8ef6af55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           },
           {
@@ -69,16 +83,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "win-layout-spawn-fix.md",
+                "file": "layout-faq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "win-layout-spawn-fix"
+              "title": "layout-faq"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,27 +226,34 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c92549a2e54222e1",
+  "active": "5401b35b8ef6af55",
   "lastOpenFiles": [
-    "media/win-layout-spawn-fix-9.png",
-    "media/win-layout-spawn-fix-8.png",
-    "media/win-layout-spawn-fix-7.png",
-    "media/win-layout-spawn-fix-6.png",
-    "media/win-layout-spawn-fix-5.png",
-    "media/win-layout-spawn-fix-4.png",
-    "media/win-layout-spawn-fix-3.png",
-    "media/win-layout-spawn-fix-2.png",
-    "media/win-layout-spawn-fix-1.png",
-    "times-better-roman.md",
+    "layout-faq.md",
+    "index.md",
     "win-layout-spawn-fix.md",
+    "layout.md",
+    "media/biolayout-poster.png",
+    "media/biolayout-keyboard.png",
+    "media/biolayout-poster-light.png",
+    "media/biolayout-poster.pdf",
+    "media/biolayout-poster-light 1.png",
+    "media/biolayout-poster 1.png",
+    "media/biolayout-keyboard 1.png",
+    "media/biolayout-poster 1.pdf",
+    "layout-poster.md",
+    "media/biolayout-thumbnail.png",
+    "media/win-biolayout.zip",
+    "media/biolayout.bundle.zip",
+    "media/linux-biolayout.zip",
+    "font-lines.md",
+    "media/layout-faq-2.png",
+    "media/layout-faq-1.png",
+    "media/_1_mac_setting_.png",
+    "times-better-roman.md",
     "suberscripts.md",
     "single-quotes.md",
     "primes-and-quotes.md",
-    "layout-poster.md",
-    "layout-faq.md",
-    "layout.md",
     "interpunct.md",
-    "font-lines.md",
     "dash-and-co.md",
     "copyright.md",
     "blog.11tydata.js",
@@ -240,8 +261,6 @@
     "hiiii.njk",
     "layout-symbols.md",
     "layout-symbols",
-    "media/primes-and-quotes-15.png",
-    "media/primes-and-quotes-14.png",
     "beautiful-urls.md",
     "hyphenation.md",
     "first-setup.md",
@@ -253,12 +272,6 @@
     "why-so-aegean.md",
     "_templates/sortspec.md",
     "11ty-preprocessors.md",
-    "walled-gardens.md",
-    "media/A-Note-on-the-Type.pdf",
-    "media/second-atom-bomb-evening-star-front-page.jp2",
-    "media/newnote-6.png.yandex_disk_download_tmp_9klug5sdjh626bbgtlo3h1j3c3",
-    "media/de392687-0120-423c-b71a-b8d3f26985e5.yadisk-drop",
-    "media/Formular-Black.otf",
-    "_templates"
+    "media/A-Note-on-the-Type.pdf"
   ]
 }

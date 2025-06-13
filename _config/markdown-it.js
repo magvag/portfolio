@@ -34,6 +34,7 @@ export default function markdownItConfig(eleventyConfig) {
 			.use(mark)
 			.use(container, { name: "container" })
 			.use(container, { name: "dummy" })
+			.use(container, { name: "scrollable" })
 			.use(icon),
 	);
 }

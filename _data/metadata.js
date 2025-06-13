@@ -16,8 +16,8 @@ export default {
 			pos: 0,
 			width: 24,
 			nav_items: [
-				{ name: "телега", url: "https://t.me/magvag/" },
-				{ name: "канал", url: "https://t.me/magmoyed/" },
+				{ name: "тг", url: "https://t.me/magvag/" },
+				{ name: "тгк", url: "https://t.me/magmoyed/" },
 			],
 		},
 		{

@@ -228,8 +228,9 @@
   },
   "active": "5401b35b8ef6af55",
   "lastOpenFiles": [
-    "layout-faq.md",
+    "layout-symbols.njk",
     "index.md",
+    "layout-faq.md",
     "win-layout-spawn-fix.md",
     "layout.md",
     "media/biolayout-poster.png",
@@ -257,7 +258,6 @@
     "dash-and-co.md",
     "copyright.md",
     "blog.11tydata.js",
-    "layout-symbols.njk",
     "hiiii.njk",
     "layout-symbols.md",
     "layout-symbols",

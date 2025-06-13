@@ -79,7 +79,7 @@ export default {
 			// style: "mix-blend-mode: darken;",
 		},
 	],
-	blog_foundation: "2025",
+	blog_foundation: "2023",
 	author: {
 		name: "Магомед Вагабов",
 		email: "inbox@magvag.ru",

@@ -1089,3 +1089,11 @@ picture:has(.full-width) {
 	width: 100%;
 	max-width: 100%;
 }
+
+.bigger {
+	font-size: 2rem;
+}
+
+.italic {
+	font-style: italic;
+}

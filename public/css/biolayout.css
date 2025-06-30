@@ -163,7 +163,7 @@ button {
 	font-size: var(--font-size-text) !important;
 	color: var(--background-color);
 	cursor: pointer;
-	padding: 0.8rem 2.2rem 1rem;
+	padding: 0.8rem 2.2rem 1rem !important;
 	background: var(--text-color-header);
 	text-wrap: nowrap;
 	border: none;
@@ -186,12 +186,6 @@ button.sidenote {
 
 button.sidenote::after {
 	content: "" !important;
-}
-
-@media screen and (min-width: 30rem) {
-	.window {
-		outline: 1.5px solid #fff;
-	}
 }
 
 .post-cards {
@@ -219,19 +213,16 @@ button.sidenote::after {
 .os-option {
 	cursor: pointer;
 	color: color-mix(in srgb, var(--text-color-header), transparent 60%);
-	text-decoration: underline dotted;
+	text-decoration: underline dashed;
 	text-decoration-thickness: 1px; /* Задаём толщину подчёркивания */
 	text-underline-offset: 0.175em; /* Задаём сдвиг подчёркивания */
-	text-decoration-color: color-mix(
-		in srgb,
-		currentColor,
-		transparent var(--transparency-underline)
-	);
+	text-decoration-color: currentColor;
 	text-decoration-skip: none; /* Запрещаем подчёркиванию пропускать выносные элементы букв */
 	text-decoration-skip-ink: none;
 	transition:
 		color 0.35s ease-in,
 		text-decoration-color 0.25s ease-in;
+		width 0.35s ease-in;
 }
 .os-option:hover {
 	color: var(--text-color-accent);

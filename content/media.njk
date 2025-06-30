@@ -5,7 +5,7 @@ const eleventyComputed = {
 	title: 'Медиатека · {{ metadata.title }}',
 };
 ---
-
+{%- css %}{% include "public/css/mediateka.css" %}{%- endcss %}
 
 <h1>Медиатека</h1>
 <div class="mediateka-grid image-grid">

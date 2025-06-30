@@ -1,22 +1,14 @@
 <!doctype html>
 		<!-- Эта страница `{{ page.url }}` была собрана {% currentBuildDate %} -->
 		<!-- Движок: 11ty, тема: Трирема -->
-<html lang="{{ metadata.language }}">
+<html lang="{{ metadata.language }}" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description | striptags or metadata.description | striptags }}">
 		<link rel="alternate" href="/rss/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		<!-- <link rel="icon" href="/assets/favicon.svg" sizes="any" type="image/svg+xml"> -->
 		<link rel="icon" href="/assets/favicon.png" sizes="32x32">
-
-    <link rel="preload" href="/assets/avatar.webp" as="image" type="image/webp" crossorigin="">
-
-    {#-
-    совет: если ваш сайт на Нетлифай, вам не нужны скрипты метрик/аналитик.
-    скрипты ухудшают перформанс, нифига не этичны и требуют согласия о куках,
-    Нетлифай-аналитика запросов к серверу анонимна: https://docs.netlify.com/monitor-sites/site-analytics/how-site-analytics-works/#}
 
     {% block preload %}
     <link rel="preload" href="/fonts/CommissionerRegular.woff2" as="font" type="font/woff2" crossorigin="">
@@ -24,47 +16,23 @@
     <link rel="preload" href="/fonts/CommissionerItalic.woff2" as="font" type="font/woff2" crossorigin="">
     {% endblock %}
 
-		{#-
-		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
-		1. CSS:
-			* Add to a per-page bundle using `{% css %}{% endcss %}`
-			* Retrieve bundle content using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}`
-		2. Or for JavaScript:
-			* Add to a per-page bundle using `{% js %}{% endjs %}`
-			* Retrieve via `{% getBundle "js" %}` or `{% getBundleFileUrl "js" %}`
-		3. Learn more: https://github.com/11ty/eleventy-plugin-bundle
-		#}
-
-		{#- Add an arbitrary string to the bundle #}
-		{%- css %}/* This is an arbitrary CSS string added to the bundle */{% endcss %}
-
-		{#- Add the contents of a file to the bundle #}
 		{%- css %}{% include "public/css/default.css" %}{% endcss %}
 		{%- css %}{% include "public/css/custom.css" %}{% endcss %}
-		{% block extracss %}{% endblock %}
 
-		{#- Or you can add from node_modules #}
-		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+		{% block extra %}
+		{%- js %}{% include "public/scripts/keyboard-nav.js" %}{% endjs %}
+		{% endblock %}
+
 
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
 		{#- <style>{% getBundle "css" %}</style> #}
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 
-
-		{%- js %}{% include "public/scripts/keyboard-nav.js" %}{% endjs %}
 		{%- js %}{% include "public/scripts/scrollable.js" %}{% endjs %}
-		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		{%- js %}{% include "public/scripts/typoreport.js" %}{% endjs %}
+
 		<script src="{% getBundleFileUrl "js" %}"></script>
-		<script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Ie Ts Ms Ee Es Rs capture Ge calculateEventProperties Os register register_once register_for_session unregister unregister_for_session js getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ds Fs createPersonProfile Ls Ps opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Cs debug I As getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_eO7Pctyu0rygzgF7wOcnV9usJCplJ8rEVNAoULKtLES', {
-        api_host: 'https://eu.i.posthog.com',
-        defaults: '2025-05-24',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
-    })
-</script>
-		<html prefix="og: http://ogp.me/ns#">
 		<meta name="og:site_name" content="{{ metadata.title }}">
 		{%- if not thumbnail %}
 		{% set images = media | imagesOnly %}
@@ -107,6 +75,5 @@
 			<p class="footer-built"> Сделано на <a href="https://trireme.magvag.ru/">Триреме</a></p>
 
 		</footer>
-		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>

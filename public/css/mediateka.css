@@ -1,0 +1,53 @@
+.mediateka-grid:has(.mediateka-grid-item) {
+	gap: 6px 2px;
+	flex-wrap: wrap;
+	margin-bottom: 32px;
+}
+
+.mediateka-grid-item a {
+	display: block;
+	text-decoration: none;
+}
+
+.mediateka-grid-item figcaption {
+	margin: 0;
+}
+
+.mediateka-grid-item figure {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.mediateka-grid-item figcaption,
+.post-title-block {
+	font-size: 0.6rem;
+}
+
+.mediateka-grid-item figcaption {
+	white-space: nowrap; /* Force single line */
+	overflow: hidden; /* Hide overflow */
+	text-overflow: ellipsis; /* Show … */
+}
+.post-title-block {
+	height: 0;
+	position: relative;
+	z-index: 1;
+	text-align: right;
+	padding-right: 3px;
+}
+
+.mediateka-grid-item.unvisitable .post-title-block a {
+	text-decoration-color: transparent;
+	color: color-mix(
+		in srgb,
+		currentColor,
+		transparent var(--transparency-underline)
+	) !important;
+}
+
+.mediateka-grid-item figcaption {
+	margin-top: -0.2rem;
+	overflow: hidden;
+	height: 1.4em;
+}

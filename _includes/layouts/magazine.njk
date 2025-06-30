@@ -1,0 +1,11 @@
+---
+layout: layouts/base.njk
+---
+{%- block extra %}
+{%- css %}{% include "public/css/magazine.css" %}{%- endcss %}
+{%- js %}{% include "public/scripts/keyboard-nav.js" %}{% endjs %}
+{%- js %}{% include "public/scripts/zachleat-anchors.js" %}{% endjs %}
+{% endblock %}
+
+
+{{ content | safe }}

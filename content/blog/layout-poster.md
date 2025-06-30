@@ -18,5 +18,5 @@ permalink: /layout/poster/
 
 ::: scrollable
 :::: dummy {class="scrollable__in js-scrollable"}
-![biolayout-poster-light](biolayout-poster-light.png) {style="border: solid 1px var(--text-color-header); min-width: 800px;"}
+![biolayout-poster-light](biolayout-poster-light.png) {style="border: solid 1px var(--text-color-header); min-width: 800px;" loading=eager}
 ::::

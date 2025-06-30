@@ -49,6 +49,8 @@ export default {
 				{ name: "вопросы", url: "/layout/faq/" },
 				{ name: "постер", url: "/layout/poster/" },
 				{ name: "символы", url: "/layout/symbols/" },
+				{ name: "моды", url: "/layout/mods/" },
+				{ name: "процесс", url: "/layout/process/" },
 			],
 			// style: "mix-blend-mode: darken;",
 		},
@@ -58,7 +60,13 @@ export default {
 			tag: "mihey",
 			pos: 136,
 			width: 100,
-			disabled: true,
+			nav_items: [
+				{ name: "проект", url: "/mihey/" },
+				{ name: "контекст", url: "/mihey#history" },
+				{ name: "тестер", url: "/mihey#try" },
+				{ name: "фичи", url: "/mihey#favs" },
+				{ name: "скачать", url: "/mihey#download" },
+			],
 		},
 		{
 			title: "Трирема — сетап для блога",

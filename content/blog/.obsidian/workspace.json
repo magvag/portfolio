@@ -8,87 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ffe81d4208095769",
+            "id": "70d9fbaf8cc6471a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "layout-poster.md",
+                "file": "layout.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "layout-poster"
+              "title": "layout"
             }
           },
           {
-            "id": "1896b9752da52202",
+            "id": "b2b71ea384cf3713",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "layout-faq.md",
+                "file": "win-layout-spawn-fix.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "layout-faq"
+              "title": "win-layout-spawn-fix"
             }
           },
           {
-            "id": "5401b35b8ef6af55",
+            "id": "2096547ae1f7f32c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "layout-process.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
-            }
-          },
-          {
-            "id": "65d11cf330ca3d7a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "times-better-roman.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "times-better-roman"
-            }
-          },
-          {
-            "id": "1f5eb7ede6073723",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "suberscripts.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "suberscripts"
-            }
-          },
-          {
-            "id": "c92549a2e54222e1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "layout-faq.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "layout-faq"
+              "title": "layout-process"
             }
           }
         ],
@@ -124,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "bundle",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -226,36 +184,43 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5401b35b8ef6af55",
+  "active": "ceb2549996a3da92",
   "lastOpenFiles": [
-    "layout-symbols.njk",
-    "index.md",
-    "layout-faq.md",
+    "media/biolayout.bundle.zip",
+    "mihey.md",
+    "media/Mihey-v1.otf",
     "win-layout-spawn-fix.md",
     "layout.md",
-    "media/biolayout-poster.png",
-    "media/biolayout-keyboard.png",
-    "media/biolayout-poster-light.png",
-    "media/biolayout-poster.pdf",
-    "media/biolayout-poster-light 1.png",
-    "media/biolayout-poster 1.png",
-    "media/biolayout-keyboard 1.png",
-    "media/biolayout-poster 1.pdf",
+    "layout-faq.md",
+    "interpunct.md",
+    "media/Frame 32.png",
+    "media/tshirt-perspective 1.png",
+    "media/Frame 28.png",
+    "media/Frame 25.png",
+    "media/mihey-thumb.png",
+    "media/oqxbljtp.png",
+    "media/b4cs2y94.png",
+    "media/literaturnaya.png",
+    "media/таблички-финал-70е-2.png",
+    "media/таблички-финал-70е-1.png",
+    "layout-process.md",
+    "Untitled.md",
+    "tg-biolayout-3-posts.md",
+    "layout-mods.md",
+    "dash-and-co.md",
+    "tg-anons-biolayout.md",
+    "suberscripts.md",
     "layout-poster.md",
-    "media/biolayout-thumbnail.png",
+    "primes-and-quotes.md",
+    "times-better-roman.md",
+    "layout-symbols.njk",
+    "index.md",
+    "media/biolayout-poster.pdf",
+    "media/biolayout-poster 1.pdf",
     "media/win-biolayout.zip",
-    "media/biolayout.bundle.zip",
     "media/linux-biolayout.zip",
     "font-lines.md",
-    "media/layout-faq-2.png",
-    "media/layout-faq-1.png",
-    "media/_1_mac_setting_.png",
-    "times-better-roman.md",
-    "suberscripts.md",
     "single-quotes.md",
-    "primes-and-quotes.md",
-    "interpunct.md",
-    "dash-and-co.md",
     "copyright.md",
     "blog.11tydata.js",
     "hiiii.njk",
@@ -265,13 +230,6 @@
     "hyphenation.md",
     "first-setup.md",
     "easter-egg.md",
-    "markdown-and-nunjucks.md",
-    "markdown-extras.md",
-    "markdown-formatting.md",
-    "_templates/template.md",
-    "why-so-aegean.md",
-    "_templates/sortspec.md",
-    "11ty-preprocessors.md",
-    "media/A-Note-on-the-Type.pdf"
+    "markdown-and-nunjucks.md"
   ]
 }

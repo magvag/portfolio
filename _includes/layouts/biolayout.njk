@@ -13,8 +13,10 @@ In case you ever need some custom fonts and styles for your project or feature s
 <link rel="preload" href="/fonts/PTSansCaptionRegular.woff2" as="font" type="font/woff2" crossorigin="">
 {% endblock %}
 
-{%- block extracss %}
+{%- block extra %}
 {%- css %}{% include "public/css/biolayout.css" %}{%- endcss %}
+{%- js %}{% include "public/scripts/zachleat-anchors.js" %}{% endjs %}
+{%- js %}{% include "public/scripts/keyboard-nav.js" %}{% endjs %}
 {% endblock %}
 
 
@@ -25,7 +27,9 @@ In case you ever need some custom fonts and styles for your project or feature s
   { name: "О раскладке", url: "/layout/" },
   { name: "Частые вопросы", url: "/layout/faq/" },
   { name: "Постер", url: "/layout/poster/" },
-  { name: "Туториал по символам", url: "/layout/symbols/" }
+  { name: "Туториал по символам", url: "/layout/symbols/" },
+  { name: "Модификации", url: "/layout/mods/" },
+  { name: "Процесс", url: "/layout/process/" }
 ] %}
 {% include "_includes/header-and-navlist.njk" %}
 {% else %}
